@@ -1,111 +1,760 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>SigitFrank</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/custom/style.css">
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
-  <!-- custom CSS -->
-  <link rel="stylesheet" href="assets/css/rps.css" />
+  <style>
+    html,
+    body,
+    header,
+    .jarallax {
+      height: 100%;
+    }
 
-  <title>ROCK PAPER SCISSOR</title>
+    @media (min-width: 560px) and (max-width: 740px) {
+
+      html,
+      body,
+      header,
+      .jarallax {
+        height: 600px;
+      }
+
+    }
+  </style>
+
 </head>
 
-<body>
-  <div class="container-fluid p-0 container__bg">
-    <div class="container-fluid p-3 d-flex flex-row align-items-center">
-      <img src="assets/img/arrow.svg" alt="" class="mx-4" style="width: 20px; height: 20px" />
-      <img src="assets/img/logo_rps.svg" style="width: 50px; height: 50px" alt="" class="mr-4" />
-      <p class="text-uppercase font-weight-bold d-inline-block mb-0 navbar__title">
-        rock paper scissors
-      </p>
-    </div>
+<body class="developer">
 
-    <div class="container mt-3 container__game">
-      <div class="row">
-        <div class="col-lg-5 d-flex flex-column align-items-center" id="playerContainer">
-          <span id="playerPic">
-            <!-- <img src="assets/img/default.jpg" alt="" class="rounded-circle py-2" width="160" id="usernameImg"> -->
-          </span>
-          <p class="text-center font-weight-bold player__text">
-            <span id="player">Player</span>
-          </p>
-          <img src="assets/img/batu.png" style="height: 60px; width: 80px" alt="" class="mt-3 player1" id="batu" />
-          <img src="assets/img/kertas.png" style="height: 80px; width: 60px" alt="" class="mt-5 player1" id="kertas" />
-          <img src="assets/img/gunting.png" style="height: 80px; width: 80px" alt="" class="mt-5 player1"
-            id="gunting" />
-          <h3 class="mt-5">SCORE : <span class="scorePlayer">0</span></h3>
-        </div>
-        <div class="col-lg-2 text-center my-auto">
-          <img style="height: 60px; width: 80px" alt="" class="playerHand my-5">
-          <h3 class="hasil d-none">HASIL</h3>
-          <img src="assets/img/VS.png" class="vs" alt="" style="width: 120px; height: 70px" />
-          <img style="height: 60px; width: 80px" alt="" class="comHand my-5">
+  <!-- Navigation & Intro -->
+  <header>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+
+      <div class="container">
+
+        <a class="navbar-brand" href="#">Sigit</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+
+          <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+          <ul class="navbar-nav mr-auto smooth-scroll">
+
+            <li class="nav-item">
+
+              <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+
+            </li>
+
+            <li class="nav-item">
+
+              <a class="nav-link" href="#about" data-offset="100">About</a>
+
+            </li>
+
+            <li class="nav-item">
+
+              <a class="nav-link" href="#skills" data-offset="100">Skills</a>
+
+            </li>
+
+            <li class="nav-item">
+
+              <a class="nav-link" href="#works" data-offset="100">Works</a>
+
+            </li>
+
+            <li class="nav-item">
+
+              <a class="nav-link" href="#contact" data-offset="100">Contact</a>
+
+            </li>
+
+          </ul>
+
+          <!-- Social Icon  -->
+          <ul class="navbar-nav nav-flex-icons">
+
+            <li class="nav-item">
+
+              <a class="nav-link"><i class="fab fa-facebook-f light-green-text-2"></i></a>
+
+            </li>
+
+            <li class="nav-item">
+
+              <a class="nav-link"><i class="fab fa-twitter light-green-text-2"></i></a>
+
+            </li>
+
+            <li class="nav-item">
+
+              <a class="nav-link"><i class="fab fa-instagram light-green-text-2"></i></a>
+
+            </li>
+
+          </ul>
 
         </div>
-        <div class="col-lg-5 d-flex flex-column align-items-center">
-          <span id="comPic">
-            <!-- <img src="assets/img/default.jpg" alt="" class="rounded-circle py-2" width="160" id="usernameImg"> -->
-          </span>
-          <p class="text-center font-weight-bold com__text">
-            <span id="com">Com</span>
-          </p>
-          <img src="assets/img/batu.png" style="height: 60px; width: 80px" alt="" class="mt-3 random" />
-          <img src="assets/img/kertas.png" style="height: 80px; width: 60px" alt="" class="mt-5 random" />
-          <img src="assets/img/gunting.png" style="height: 80px; width: 80px" alt="" class="mt-5 random" />
-          <h3 class="mt-5">SCORE : <span class="scoreCom">0</span></h3>
-        </div>
+
       </div>
-    </div>
 
-    <div class="container text-center pb-5">
-      <div class="row">
-        <div class="col-lg-12">
-          <img src="assets/img/refresh.png" style="height: 50px; width: 55px" class="tombol-refresh" alt="" />
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="usernameModal" tabindex="-1" aria-labelledby="usernameModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="usernameModalLabel">WELCOME</h5>
-        </div>
-        <div class="modal-body">
-          <div class="invalid-feedback py-2">*make sure it's public profile</div>
-          <div class="form-group">
-            <label for="username">Your Instagram Username <span class="text-danger font-weight-bold">*</span></label>
-            <input type="text" class="form-control" id="playerUsername">
+    </nav>
+
+    <!-- Intro Section -->
+    <div id="home" class="view jarallax" data-jarallax='{"speed": 0.2}'
+      style="background-image: url('img/hero.png'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+
+      <div class="mask rgba-black-strong">
+
+        <div class="container h-100 d-flex justify-content-center align-items-center">
+
+          <div class="row smooth-scroll">
+
+            <div class="col-md-12 pt-3">
+
+              <div class="white-text text-center pt-5">
+
+                <h5 class="display-4 mb-4 text-white wow fadeIn">
+                  <strong id="myName"></strong>
+                </h5>
+                <h5 class="text-uppercase font-weight-bold wow fadeIn" data-wow-delay="0.4s"><mark>Web developer</mark>
+                </h5>
+
+                <a href="#about" class="btn btn-floating btn-large wow fadeIn" data-wow-delay="0.4s"
+                  data-offset="100"><i class="fas fa-angle-down" aria-hidden="true"></i></a>
+
+              </div>
+
+            </div>
+
           </div>
-          <div class="form-group">
-            <label for="comUsername">Whose username you wanna fight?</label>
-            <input type="text" class="form-control" id="comUsername">
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" id="btnStart">Start!</button>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="d-none">
-    Developed by Sigit & Mujahid. 2020.
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+  <!-- Navigation & Intro -->
+
+  <!-- Main layout -->
+  <main>
+
+    <!-- First container -->
+    <div class="container">
+
+      <!-- Section About -->
+      <section id="about" class="section feature-box mb-5">
+
+        <!-- Section title -->
+        <h2 class="text-center text-uppercase my-5 pt-5 wow fadeIn" data-wow-delay="0.2s">About <strong>me</strong></h2>
+
+        <p class="text-center w-responsive mx-auto wow fadeIn my-5" data-wow-delay="0.2s"></p>
+
+        <!-- First row -->
+        <div class="row features-big text-center wow fadeIn" data-wow-delay="0.4s">
+
+          <!-- First column -->
+          <div class="col-md-4 mb-5">
+
+            <!-- Panel -->
+            <div class="card card-body hoverable">
+              <i class="fas fa-user-tie fa-3x mb-4" aria-hidden="true"></i>
+
+              <h5 class="font-weight-bold text-uppercase mb-4">As Person</h5>
+
+              <p class="dark-grey-text note note-primary">
+                Verily Allah does not look to your faces and your wealth but He looks to your heart and to your deeds.
+                <br>
+                [Sahih Muslim 2564]
+              </p>
+
+            </div>
+            <!-- Panel -->
+
+          </div>
+          <!-- First column -->
+
+          <!-- Second column -->
+          <div class="col-md-4 mb-5">
+
+            <!-- Panel -->
+            <div class="card card-body yellow hoverable">
+
+              <i class="fas fa-code fa-3x mb-4" aria-hidden="true"></i>
+
+              <h5 class="font-weight-bold text-uppercase mb-4">As Developer</h5>
+
+              <p class="dark-grey-text note note-warning">
+                There are 10 types of people. They who understand binary and they who don't. Which one are you?
+              </p>
+
+            </div>
+            <!-- Panel -->
+
+          </div>
+          <!-- Second column -->
+
+          <!-- Third column -->
+          <div class="col-md-4 mb-5">
+
+            <!-- Panel -->
+            <div class="card card-body hoverable">
+
+              <i class="fas fa-pencil-alt fa-3x mb-4" aria-hidden="true"></i>
+
+              <h5 class="font-weight-bold text-uppercase mb-4">As Opposite</h5>
+
+              <p class="dark-grey-text note note-primary">
+                Don't treat people like the way they treat you. Treat them better.
+              </p>
+
+            </div>
+            <!-- Panel -->
+
+          </div>
+          <!-- Third column -->
+
+        </div>
+        <!-- First row -->
+
+      </section>
+      <!-- Second section -->
+
+    </div>
+    <!-- First container -->
+
+    <!-- Second container -->
+    <div class="container-fluid" style="background-color: #f3f3f5;">
+
+      <div class="container py-4 pt-4">
+
+        <!-- Second section -->
+        <section id="skills">
+
+          <!-- First row -->
+          <div class="row py-5">
+
+            <!-- First column -->
+            <div class="col-lg-6 col-md-12 mb-3 wow fadeIn" data-wow-delay="0.4s">
+
+              <!-- Section heading -->
+              <div class="d-flex justify-content-start">
+
+                <h4 class="text-center text-uppercase mb-5 pb-3 mt-4 wow fadeIn" data-wow-delay="0.2s">My
+                  <strong>experience</strong></h4>
+
+              </div>
+
+              <!-- Description -->
+              <blockquote class="blockquote bq-warning mb-4">
+
+                <div class="row"> <i class="fas fa-briefcase fa-x mb-1 mr-3 ml-3" aria-hidden="true"></i>
+
+                  <h5 class="font-weight-bold mb-3">Web Developer</h5>
+
+                </div>
+
+                <p class="font-weight-bold ml-1 dark-grey-text mb-2">August, 2020 - Present</p>
+
+                <p class="mb-0 ml-1 light-grey-text">Develop, maintain,and create scalable code based on company
+                  requirements. </p>
+
+              </blockquote>
+
+              <div class="d-flex justify-content-start">
+
+                <h4 class="text-center text-uppercase mt-5 pb-3 mt-4 wow fadeIn" data-wow-delay="0.2s">DATABASE &
+                  <strong>FRAMEWORK</strong></h4>
+
+              </div>
+              <p class="black-text text-uppercase font-weight-bold text-justify">MYSQL</p>
+
+              <div class="md-progress">
+
+                <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="25" aria-valuemin="0"
+                  aria-valuemax="100"></div>
+
+              </div>
+              <p class="black-text text-uppercase font-weight-bold text-justify">API</p>
+
+              <div class="md-progress">
+
+                <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="25" aria-valuemin="0"
+                  aria-valuemax="100"></div>
+
+              </div>
+              <p class="black-text text-uppercase font-weight-bold text-justify">CODEIGNITER</p>
+
+              <div class="md-progress">
+
+                <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="25" aria-valuemin="0"
+                  aria-valuemax="100"></div>
+
+              </div>
+              <p class="black-text text-uppercase font-weight-bold text-justify">LARAVEL</p>
+
+              <div class="md-progress">
+
+                <div class="progress-bar" role="progressbar" style="width: 30%" aria-valuenow="25" aria-valuemin="0"
+                  aria-valuemax="100"></div>
+
+              </div>
+
+              <p class="black-text text-uppercase font-weight-bold text-justify">REACT JS</p>
+
+              <div class="md-progress">
+
+                <div class="progress-bar" role="progressbar" style="width: 30%" aria-valuenow="25" aria-valuemin="0"
+                  aria-valuemax="100"></div>
+
+              </div>
+            </div>
+            <!-- First column -->
+
+            <!-- Second column -->
+            <div class="col-lg-5 offset-lg-1 col-md-12 mb-4 wow fadeIn" data-wow-delay="0.4s">
+
+              <!-- Second heading -->
+              <div class="d-flex justify-content-start">
+
+                <h4 class="text-center text-uppercase mb-5 pb-3 mt-4 wow fadeIn" data-wow-delay="0.2s">Development
+                  <strong>Skills</strong></h4>
+
+              </div>
+
+              <!-- Description -->
+              <p class="black-text text-uppercase font-weight-bold text-justify">Java Script</p>
+
+              <div class="md-progress">
+
+                <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="25" aria-valuemin="0"
+                  aria-valuemax="100"></div>
+
+              </div>
+
+              <p class="black-text text-uppercase font-weight-bold pt-3 text-justify">CSS3</p>
+
+              <div class="md-progress">
+
+                <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="25" aria-valuemin="0"
+                  aria-valuemax="100"></div>
+
+              </div>
+
+              <p class="black-text text-uppercase font-weight-bold pt-3 text-justify">HTML5</p>
+
+              <div class="md-progress">
+
+                <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="25" aria-valuemin="0"
+                  aria-valuemax="100"></div>
+
+              </div>
+
+              <p class="black-text text-uppercase font-weight-bold pt-3 text-justify">Bootstrap</p>
+
+              <div class="md-progress">
+
+                <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="25" aria-valuemin="0"
+                  aria-valuemax="100"></div>
+
+              </div>
+
+              <p class="black-text text-uppercase font-weight-bold pt-3 text-justify">PHP</p>
+
+              <div class="md-progress">
+                <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="25" aria-valuemin="0"
+                  aria-valuemax="100"></div>
+              </div>
+
+              <div class="d-flex justify-content-start">
+                <h4 class="text-center text-uppercase mt-4 wow fadeIn" data-wow-delay="0.2s">CMS & <strong>VERSION
+                    CONTROL</strong></h4>
+              </div>
+              <p class="black-text text-uppercase font-weight-bold pt-3 text-justify">EXPRESSION ENGINE</p>
+
+              <div class="md-progress">
+                <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="25" aria-valuemin="0"
+                  aria-valuemax="100"></div>
+              </div>
+              <p class="black-text text-uppercase font-weight-bold pt-3 text-justify">GIT & GITHUB</p>
+
+              <div class="md-progress">
+                <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="25" aria-valuemin="0"
+                  aria-valuemax="100"></div>
+              </div>
+            </div>
+            <!-- Second column -->
+
+          </div>
+          <!-- First row -->
+
+        </section>
+        <!-- Second section -->
+
+      </div>
+
+    </div>
+    <!-- Second container -->
+
+    <!-- Third container -->
+    <div class="container">
+
+      <!-- Section About -->
+      <section class="section feature-box my-5 pb-5">
+
+        <!-- Section title -->
+        <h2 class="text-center text-uppercase my-5 pt-5 wow fadeIn" data-wow-delay="0.2s">Process of
+          <strong>Learning</strong></h2>
+
+        <p class="text-center w-responsive mx-auto wow fadeIn my-5" data-wow-delay="0.2s">You can't be programming
+          master in just one night. You need <span class="text-primary">time, consistency, practice,</span> and <span
+            class="text-danger">a lot of
+            errors.</span></p>
+
+        <!-- Nav tabs -->
+        <ul class="nav md-tabs nav-justified blue" role="tablist">
+
+          <li class="nav-item">
+
+            <a class="nav-link active" data-toggle="tab" href="#panel1" role="tab">01. TRY</a>
+
+          </li>
+
+          <li class="nav-item">
+
+            <a class="nav-link" data-toggle="tab" href="#panel2" role="tab">02. CATCH</a>
+
+          </li>
+
+          <li class="nav-item">
+
+            <a class="nav-link" data-toggle="tab" href="#panel3" role="tab">03. THROW</a>
+
+          </li>
+
+        </ul>
+
+        <!-- Tab panels -->
+        <div class="tab-content card">
+
+          <!-- Panel 1 -->
+          <div class="tab-pane fade in show active" id="panel1" role="tabpanel">
+
+            <br>
+
+            <div class="row mt-2">
+
+              <div class="col-2 text-center"><i class="fas fa-laptop-code fa-3x mb-1 grey-text" aria-hidden="true"></i>
+              </div>
+
+              <div class="col-9 mb-2">
+
+                <p class="dark-grey-text">
+                  Some people think it's really hard to achive what common people can't do. Do not listen them, if you
+                  don't try, you will not know the result.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+          <!-- Panel 1 -->
+
+          <!-- Panel 2 -->
+          <div class="tab-pane fade" id="panel2" role="tabpanel">
+
+            <br>
+
+            <div class="row mt-2">
+
+              <div class="col-2 text-center"> <i class="fas fa-pencil-alt fa-3x mb-1 grey-text" aria-hidden="true"></i>
+              </div>
+
+              <div class="col-9 mb-2">
+
+                <p class="dark-grey-text">
+                  Everytime you fail, don't blame yourself, you get experience by failing on it.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+          <!-- Panel 2 -->
+
+          <!-- Panel 3 -->
+          <div class="tab-pane fade" id="panel3" role="tabpanel">
+
+            <br>
+
+            <div class="row mt-2">
+
+              <div class="col-2 text-center"> <i class="fas fa-code fa-3x mb-1 grey-text" aria-hidden="true"></i> </div>
+
+              <div class="col-9 mb-2">
+
+                <p class="dark-grey-text">Throw away all your worries. These things will only be your obstacles to be
+                  what you want to be, to be the best version of yourself. </p>
+
+              </div>
+
+            </div>
+
+          </div>
+          <!-- Panel 3 -->
+
+        </div>
+        <!-- Tab panels -->
+
+      </section>
+      <!-- Section -->
+
+    </div>
+    <!-- Third container -->
+
+    <!-- Streak -->
+    <div class="streak streak-photo streak-md"
+      style="background-image:url('https://mdbootstrap.com/img/Photos/Horizontal/Work/12-col/img%20%2811%29.jpg')">
+
+      <div class="mask flex-center rgba-black-strong">
+
+        <div class="white-text smooth-scroll mx-4">
+
+          <h2 class="h2-responsive wow fadeIn mb-5"><i class="fas fa-quote-left" aria-hidden="true"></i> Programming is
+            not writing some code and make programs, it's finding way to solve a problem.<i class="fas fa-quote-right"
+              aria-hidden="true"></i></h2>
+
+          <h5 class="text-center font-italic wow fadeIn" data-wow-delay="0.2s">~</h5>
+
+        </div>
+
+      </div>
+
+    </div>
+    <!-- Streak -->
+
+    <!-- Fourth container -->
+    <div class="container">
+
+      <!-- Fourth section -->
+      <section id="works" class="section mb-5">
+
+        <!-- Section title -->
+        <h2 class="text-center text-uppercase my-5 pt-5 wow fadeIn" data-wow-delay="0.2s">My <strong>projects</strong>
+        </h2>
+
+        <!-- Section description -->
+        <p class="text-center w-responsive mx-auto wow fadeIn my-5">Some works done, some failed, some stopped. Never
+          mind, you can't be stopped.</p>
+
+        <!-- First row -->
+        <div class="row wow fadeIn" data-wow-delay="0.4s">
+
+          <!-- First column -->
+          <div class="col-md-12 mb-5">
+
+            <!-- Lightbox -->
+            <div id="mdb-lightbox-ui"></div>
+
+            <div class="mdb-lightbox">
+              <div class="row">
+                <figure class="col-md-6">
+                  <img src="img/projects/jiwamuku.JPG" class="img-fluid z-depth-1">
+                </figure>
+
+                <figure class="col-md-6">
+                  <img src="img/projects/findnews.png" class="img-fluid z-depth-1">
+                </figure>
+
+                <figure class="col-md-6">
+                  <img src="img/projects/gudangin.png" class="img-fluid z-depth-1">
+                </figure>
+
+                <figure class="col-md-6">
+                  <img src="img/projects/kp.JPG" class="img-fluid z-depth-1">
+                </figure>
+
+                <figure class="col-md-6">
+                  <img src="img/projects/sig.JPG" class="img-fluid z-depth-1">
+                </figure>
+              </div>
+            </div>
+            <!-- Lightbox -->
+
+          </div>
+          <!-- First column -->
+
+        </div>
+        <!-- First row -->
+
+      </section>
+      <!-- Fourth section -->
+
+      <hr>
+
+    </div>
+    <!-- Fourth container -->
+
+    <!-- Contact form -->
+    <div id="contact" class="container">
+
+      <!-- Section: Contact v.2 -->
+      <section class="section contact-section mt-4 mb-5">
+
+        <!-- Section heading -->
+        <h2 class="text-center text-uppercase my-5 pt-5 wow fadeIn" data-wow-delay="0.2s">Contact <strong>me</strong>
+        </h2>
+        <div class="row wow fadeIn" data-wow-delay="0.4s">
+          <!-- First column -->
+          <div class="col-md-8 mb-5">
+
+            <form action="https://formspree.io/f/xdopwyaw" method="POST">
+              <!--Grid row-->
+              <div class="row">
+                <!--Grid column-->
+                <div class="col-md-12">
+                  <div class="md-form">
+                    <input type="text" id="name" name="message" class="md-textarea form-control">
+                    <label for="name">Name please(?)</label>
+                  </div>
+                  <div class="md-form">
+                    <textarea type="text" id="contact-message" name="message" class="md-textarea form-control"
+                      rows="3"></textarea>
+                    <label for="contact-message">Anything</label>
+                  </div>
+                </div>
+              </div>
+              <!--Grid row-->
+              <button class="btn footer text-white btn-block mb-5" type="submit">Send</button>
+            </form>
+
+          </div>
+          <!-- First column -->
+
+          <!-- Second column -->
+          <div class="col-md-4">
+
+            <ul class="contact-icons list-unstyled text-center">
+
+              <li><i class="fas fa-map-marker-alt fa-2x"></i>
+
+                <p>Jakarta, Indonesia</p>
+
+              </li>
+
+            </ul>
+
+          </div>
+          <!-- Second column -->
+
+        </div>
+      </section>
+      <!-- Section: Contact v.2 -->
+
+    </div>
+
+    <!-- Contact form -->
+    <div class="footer">
+
+      <div class="flex-center">
+
+        <ul class="list-unstyled text-white">
+
+          <li>
+            <h2 class="h2-responsive mt-5 wow fadeIn">Thanks for visiting</h2>
+          </li>
+
+          <li>
+            <h5 class="h5-responsive wow fadeIn" data-wow-delay="0.2s">Just send me a message!</h5>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+    <!-- Customers carousel -->
+  </main>
+  <!-- Main layout -->
+
+  <!-- Scrollspy -->
+  <div class="dotted-scrollspy clearfix d-none d-sm-block">
+
+    <ul class="nav smooth-scroll flex-column">
+
+      <li class="nav-item"><a class="nav-link" href="#home"><span></span></a></li>
+
+      <li class="nav-item"><a class="nav-link" href="#about"><span></span></a></li>
+
+      <li class="nav-item"><a class="nav-link" href="#skills"><span></span></a></li>
+
+      <li class="nav-item"><a class="nav-link" href="#works"><span></span></a></li>
+
+      <li class="nav-item"><a class="nav-link" href="#contact"><span></span></a></li>
+
+    </ul>
+
   </div>
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <!-- Scrollspy -->
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript " src="js/jquery-3.4.1.min.js "></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript " src="js/popper.min.js "></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript " src="js/bootstrap.min.js "></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript " src="js/mdb.min.js "></script>
+  <script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
+  <script src="js/custom/script.js"></script>
+  <script>
+    // initialize scrollspy
+    $('body').scrollspy({
+
+      target: '.dotted-scrollspy'
+    });
+
+    // initialize lightbox
+    $(function () {
+
+      $("#mdb-lightbox-ui").load("mdb-addons/mdb-lightbox-ui.html");
+    });
+
+    $('.navbar-collapse a').click(function () {
+
+      $(".navbar-collapse").collapse('hide');
+    });
+
+    /* WOW.js init */
+    new WOW().init();
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
-  </script>
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="assets/js/rps.js"></script>
+
 </body>
 
 </html>
