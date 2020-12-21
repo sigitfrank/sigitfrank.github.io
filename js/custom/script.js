@@ -9,4 +9,4 @@ type('myName',' <span class="text-warning">echo</span> "Sigit"');
 
 setTimeout(() => {
     document.getElementById('myName').innerHTML = "Si<span class='name'>git</span>";
-}, 3000);
+}, 5000);
