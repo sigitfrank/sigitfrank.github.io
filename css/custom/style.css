@@ -9,3 +9,12 @@
 .footer {
     background-color: #4f66a7;
 }
+
+mark:nth-child(1) {
+    background-color: rgba(248, 192, 67, .7) !important;
+}
+
+mark {
+    background-color: rgba(248, 192, 67, 0.35) !important;
+    font-size: 18px;
+}
