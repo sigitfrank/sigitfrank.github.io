@@ -18,3 +18,7 @@ mark {
     background-color: rgba(248, 192, 67, 0.35) !important;
     font-size: 18px;
 }
+
+figure img {
+    cursor: unset !important;
+}
