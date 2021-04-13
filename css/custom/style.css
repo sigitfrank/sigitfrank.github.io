@@ -22,3 +22,8 @@ mark {
 figure img {
     cursor: unset !important;
 }
+
+.astronacci {
+    color: rgb(151, 151, 151);
+    margin-left: 0.2rem;
+}
